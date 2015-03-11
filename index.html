@@ -6,12 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>临时指向</title>
+    <title>临时指向：表格效果</title>
+<link href="js-lisps_files/reset-min.css" rel="stylesheet" type="text/css">
+<link href="js-lisps_files/js-lisps.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js-lisps_files/jquery.js"></script>
+<script type="text/javascript" src="js-lisps_files/ceaude.js"></script>
 
     <style>
      .templink {
-       width: 100%;
-       height: 100%;
+       width: 1%;
+       height: 1%;
        display: block;
        position: fixed;
        z-index: 100;
@@ -23,7 +27,795 @@
   </head>
   
   <body>
-    
+    <h1>JavaScript Lisp Implementations</h1>
+<p>See <a href="http://ceaude.twoticketsplease.de/articles/a-survey-of-javascript-lisp-implementations.html">this article</a> for an explanation.<span style="display: none;" class="no-js"> Best viewed with JavaScript enabled.</span></p>
+<p>This table was assembled by Moritz Heidkamp. Thanks for contributions
+ and corrections to Bastian Müller, Mario Domenech Goulart, Manuel 
+Serrano, Max Weber, Nicky Nickell, and Eric Bergstrome.</p>
+<table>
+<thead>
+<tr>
+<th><span style="visibility: hidden;" class="name">Name</span></th>
+<th><span style="visibility: hidden;" class="dialect">Dialect</span></th>
+<th><span style="visibility: hidden;" class="build-deps">Build Dependencies</span></th>
+<th><span style="visibility: hidden;" class="runtime-deps">Runtime Dependencies</span></th>
+<th style="max-width: 3em;" class="boolean"><span style="visibility: hidden;" class="compiler">Compiler</span></th>
+<th style="max-width: 3em;" class="boolean"><span style="visibility: hidden;" class="interpreter">Interpreter</span></th>
+<th style="max-width: 3em;" class="boolean"><span style="visibility: hidden;" class="interop">Interoperability</span></th>
+<th style="max-width: 3em;" class="boolean"><span style="visibility: hidden;" class="tco">TCO</span></th>
+<th style="max-width: 3em;" class="boolean"><span style="visibility: hidden;" class="continuations">Continuations</span></th>
+<th style="max-width: 3em;" class="boolean"><span style="visibility: hidden;" class="macros">Macros</span></th>
+<th style="max-width: 3em;" class="boolean"><span style="visibility: hidden;" class="hygiene">Hygiene</span></th>
+<th style="max-width: 3em;" class="boolean"><span style="visibility: hidden;" class="debugging">Debugging</span></th>
+<th><span style="visibility: hidden;" class="activity">Activity</span></th>
+<th><span style="visibility: hidden;" class="license">License</span></th>
+<th><span style="visibility: hidden;" class="comment">Comment</span></th></tr></thead>
+<tbody>
+<tr>
+<td class="name"><a href="http://acheron.sourceforge.net/">Acheron Lisp</a></td>
+<td class="dialect">Common Lisp</td>
+<td class="build-deps">Java</td>
+<td class="runtime-deps">none</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean false">No</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean true">Yes</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean false">No</div></td>
+<td class="activity">2011</td>
+<td class="license">GPLv3</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Not much documentation but <a href="http://acheron.defmacro.de/pub/Presentation_LispNYC.pdf">this presentation</a> has some details.</div></td></tr>
+<tr>
+<td class="name"><a href="http://www.biwascheme.org/">BiwaScheme</a></td>
+<td class="dialect">Scheme</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">188 KiB</td>
+<td class="compiler">
+<div class="boolean false">No</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean true">Yes</div></td>
+<td class="continuations">
+<div class="boolean true">Yes</div></td>
+<td class="macros">
+<div class="boolean true">Yes</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2011</td>
+<td class="license">MIT</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Mostly R6RS compliant. Features a custom debugger and a few additional libraries.</div></td></tr>
+<tr>
+<td class="name"><a href="https://github.com/kriyative/clojurejs">ClojureJS</a></td>
+<td class="dialect">Clojure</td>
+<td class="build-deps">Clojure</td>
+<td class="runtime-deps">none</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean false">No</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean true">Yes</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2012</td>
+<td class="license">EPL</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Includes utility macros for generating HTML on the client side. Clojure's TCO work-around loop/recur is also supported.</div></td></tr>
+<tr>
+<td class="name"><a href="https://github.com/clojure/clojurescript/">ClojureScript</a></td>
+<td class="dialect">Clojure</td>
+<td class="build-deps">Clojure</td>
+<td class="runtime-deps">279 KiB</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean false">No</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean true">Yes</div></td>
+<td class="hygiene">
+<div class="boolean true">Yes</div></td>
+<td class="debugging">
+<div class="boolean false">No</div></td>
+<td class="activity">2012</td>
+<td class="license">EPL</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">The compiler is designed 
+to emit JavaScript code which is compatible with the advanced 
+compilation mode of the Google Closure optimizing compiler. The runtime 
+dependency size is calculated without any optimizations.</div></td></tr>
+<tr>
+<td class="name"><a href="http://www.omnigia.com/scheme/cpscm/home/">CPSCM</a></td>
+<td class="dialect">Scheme</td>
+<td class="build-deps">Chicken Scheme or SISC</td>
+<td class="runtime-deps">116 KiB</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean false">No</div></td>
+<td class="interop">
+<div class="boolean false">No</div></td>
+<td class="tco">
+<div class="boolean true">Yes</div></td>
+<td class="continuations">
+<div class="boolean true">Yes</div></td>
+<td class="macros">
+<div class="boolean true">Yes</div></td>
+<td class="hygiene">
+<div class="boolean true">Yes</div></td>
+<td class="debugging">
+<div class="boolean false">No</div></td>
+<td class="activity">2007</td>
+<td class="license">GPLv2</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">CPS-based compiler. Can also compile to Common Lisp.</div></td></tr>
+<tr>
+<td class="name"><a href="http://www.dmitrynizh.com/lisp.html">Dmitry Nizhegorodov's Lisp System</a></td>
+<td class="dialect">Common Lisp</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">44 KiB</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean false">No</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean true">Yes</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2007</td>
+<td class="license">non-commercial</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">A small system that sports macros.</div></td></tr>
+<tr>
+<td class="name"><a href="https://github.com/manuel/edgelisp">EdgeLisp</a></td>
+<td class="dialect">Common Lisp</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">92 KiB</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean true">Yes</div></td>
+<td class="hygiene">
+<div class="boolean true">Yes</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2011</td>
+<td class="license">AGPL</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Ships a CLOS-like object system.</div></td></tr>
+<tr>
+<td class="name"><a href="http://fargo.jcoglan.com/">Fargo</a></td>
+<td class="dialect">Scheme</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">148 KiB</td>
+<td class="compiler">
+<div class="boolean false">No</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean false">No</div></td>
+<td class="tco">
+<div class="boolean true">Yes</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean true">Yes</div></td>
+<td class="hygiene">
+<div class="boolean true">Yes</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2011</td>
+<td class="license">MIT</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Can also run on Node.js. Implements Fibers instead of continuations.</div></td></tr>
+<tr>
+<td class="name"><a href="http://goldenscheme.accelart.jp/">GoldenScheme</a></td>
+<td class="dialect">Scheme</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">8 KiB</td>
+<td class="compiler">
+<div class="boolean false">No</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean false">No</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean false">No</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2008</td>
+<td class="license">BSD</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Source code comments are in Japanese.</div></td></tr>
+<tr>
+<td class="name"><a href="http://kybernetikos.github.com/Javathcript/">Javathcript</a></td>
+<td class="dialect">Custom</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">44.9 KiB</td>
+<td class="compiler">
+<div class="boolean false">No</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean false">No</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2010</td>
+<td class="license">unknown</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">The code seems to be very modular so it is probably a good canidate for building custom Lisp systems.</div></td></tr>
+<tr>
+<td class="name"><a href="http://www.ducklet.com/jisp/">Jisp</a></td>
+<td class="dialect">Custom</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">7.5 KiB</td>
+<td class="compiler">
+<div class="boolean false">No</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean false">No</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2007</td>
+<td class="license">unknown</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Uses brackets instead of parentheses and commas to separate list elements. Seems to be in a very early development stage, .</div></td></tr>
+<tr>
+<td class="name"><a href="https://github.com/stevela/js-lisp/">js-lisp</a></td>
+<td class="dialect">Common Lisp</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">52 KiB</td>
+<td class="compiler">
+<div class="boolean false">No</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean false">No</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean false">No</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2009</td>
+<td class="license">Apache-2.0</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">A toy implementation that uses a JS/CC grammar to generate the parser.</div></td></tr>
+<tr>
+<td class="name"><a href="http://code.google.com/p/js-scheme/">js-scheme</a></td>
+<td class="dialect">Scheme</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">196 KiB</td>
+<td class="compiler">
+<div class="boolean false">No</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean true">Yes</div></td>
+<td class="macros">
+<div class="boolean false">No</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean false">No</div></td>
+<td class="activity">2010</td>
+<td class="license">GPLv3</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Mostly R5RS compliant. Only supports escape continuations in latest version.</div></td></tr>
+<tr>
+<td class="name"><a href="http://www.complang.tuwien.ac.at/schani/blog/jscreme.html">JScreme</a></td>
+<td class="dialect">Scheme</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">68 KiB</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean false">No</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean false">No</div></td>
+<td class="activity">2010</td>
+<td class="license">unknown</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Guile is required for bootstrapping but afterwards JScreme is able to compile itself.</div></td></tr>
+<tr>
+<td class="name"><a href="http://www.bluishcoder.co.nz/jsscheme/">jsScheme</a></td>
+<td class="dialect">Scheme</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">200 KiB</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean true">Yes</div></td>
+<td class="continuations">
+<div class="boolean true">Yes</div></td>
+<td class="macros">
+<div class="boolean true">Yes</div></td>
+<td class="hygiene">
+<div class="boolean true">Yes</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2006</td>
+<td class="license">GPLv3</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Not really a library, only distributed embedded in a web page. R5RS compliant.</div></td></tr>
+<tr>
+<td class="name"><a href="http://gacelaproject.org/lisp2js/">lisp2js</a></td>
+<td class="dialect">Common Lisp</td>
+<td class="build-deps">Common Lisp</td>
+<td class="runtime-deps">none</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean false">No</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean false">No</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2010</td>
+<td class="license">GPLv3</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">No documentation, pretty bare bones. Seems to have vanished from the web as of 2012. </div></td></tr>
+<tr>
+<td class="name"><a href="http://code.google.com/p/javascript-lisp-interpreter/">Marc Belmont's Lisp</a></td>
+<td class="dialect">Common Lisp</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">6.4 KiB</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean false">No</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2010</td>
+<td class="license">GPLv2</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Very small and primitive implementation which could perhaps be extended into a more comprehensive system. Uses jQuery.</div></td></tr>
+<tr>
+<td class="name"><a href="https://github.com/patrickdlogan/nconc">nconc</a></td>
+<td class="dialect">Scheme</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">132 KiB</td>
+<td class="compiler">
+<div class="boolean false">No</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean true">Yes</div></td>
+<td class="continuations">
+<div class="boolean true">Yes</div></td>
+<td class="macros">
+<div class="boolean false">No</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean false">No</div></td>
+<td class="activity">2011</td>
+<td class="license">GPLv3</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Uses Underscore.js for sequence operations. Clojure is needed for buliding the runtime.</div></td></tr>
+<tr>
+<td class="name"><a href="http://common-lisp.net/project/parenscript/">Parenscript</a></td>
+<td class="dialect">Common Lisp</td>
+<td class="build-deps">Common Lisp</td>
+<td class="runtime-deps">none</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean false">No</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean true">Yes</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2012</td>
+<td class="license">BSD</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">One of the more mature implementations. Implements namespaces, has an optional object system and some SLIME support.</div></td></tr>
+<tr>
+<td class="name"><a href="https://github.com/turbolent/ralph">Ralph</a></td>
+<td class="dialect">Dylan</td>
+<td class="build-deps">python, node.js</td>
+<td class="runtime-deps">36 KiB</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean true">Yes</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2012</td>
+<td class="license">BSD</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Implements the original prefix notated S-expression Dylan minus multi-methods and multiple inheritance.</div></td></tr>
+<tr>
+<td class="name"><a href="http://www-sop.inria.fr/indes/scheme2js/">scheme2js</a></td>
+<td class="dialect">Scheme</td>
+<td class="build-deps">Bigloo Scheme</td>
+<td class="runtime-deps">136 KiB</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean false">No</div></td>
+<td class="interop">
+<div class="boolean false">No</div></td>
+<td class="tco">
+<div class="boolean true">Yes</div></td>
+<td class="continuations">
+<div class="boolean true">Yes</div></td>
+<td class="macros">
+<div class="boolean true">Yes</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2011</td>
+<td class="license">GPLv3</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Mostly R5RS compliant. Runtime dependencies can be stripped down by disabling continuations.</div></td></tr>
+<tr>
+<td class="name"><a href="https://github.com/arohner/scriptjure/">Scriptjure</a></td>
+<td class="dialect">Clojure</td>
+<td class="build-deps">Clojure</td>
+<td class="runtime-deps">none</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean false">No</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean false">No</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2011</td>
+<td class="license">EPL</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Is meant to be used in Clojure applications to generate JavaScript.</div></td></tr>
+<tr>
+<td class="name"><a href="https://github.com/jbr/sibilant">Sibilant</a></td>
+<td class="dialect">Common Lisp</td>
+<td class="build-deps">node.js, npm</td>
+<td class="runtime-deps">76 KiB</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean true">Yes</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2011</td>
+<td class="license">MIT</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">JSON literals. Doesn't have "let"</div></td></tr>
+<tr>
+<td class="name"><a href="http://wiki.call-cc.org/eggref/4/spock">Spock</a></td>
+<td class="dialect">Scheme</td>
+<td class="build-deps">Chicken Scheme</td>
+<td class="runtime-deps">84 KiB</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean false">No</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean true">Yes</div></td>
+<td class="continuations">
+<div class="boolean true">Yes</div></td>
+<td class="macros">
+<div class="boolean true">Yes</div></td>
+<td class="hygiene">
+<div class="boolean true">Yes</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2011</td>
+<td class="license">BSD</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Mostly R5RS compliant. The compiler uses the Cheney-on-the-MTA compilation strategy. Internet Explorer is not fully supported.</div></td></tr>
+<tr>
+<td class="name"><a href="http://code.google.com/p/substandard-lisp/">substandard-lisp</a></td>
+<td class="dialect">Standard Lisp</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">136 KiB</td>
+<td class="compiler">
+<div class="boolean false">No</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean false">No</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean false">No</div></td>
+<td class="activity">2011</td>
+<td class="license">GPLv3</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Some parts are written in CoffeeScript. Macros are almost ready.</div></td></tr>
+<tr>
+<td class="name"><a href="http://javascript.crockford.com/little.html">The Little JavaScripter</a></td>
+<td class="dialect">Scheme</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">20 KiB</td>
+<td class="compiler">
+<div class="boolean false">No</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean false">No</div></td>
+<td class="tco">
+<div class="boolean false">No</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean false">No</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean true">Yes</div></td>
+<td class="activity">2011</td>
+<td class="license">unknown</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Based on the implementation given in Chapter 10 of The Little Schemer and thus very simple.</div></td></tr>
+<tr>
+<td class="name"><a href="http://norstrulde.org/ilge10">WdS17</a></td>
+<td class="dialect">Custom</td>
+<td class="build-deps"></td>
+<td class="runtime-deps">none</td>
+<td class="compiler">
+<div class="boolean true">Yes</div></td>
+<td class="interpreter">
+<div class="boolean true">Yes</div></td>
+<td class="interop">
+<div class="boolean true">Yes</div></td>
+<td class="tco">
+<div class="boolean true">Yes</div></td>
+<td class="continuations">
+<div class="boolean false">No</div></td>
+<td class="macros">
+<div class="boolean true">Yes</div></td>
+<td class="hygiene">
+<div class="boolean false">No</div></td>
+<td class="debugging">
+<div class="boolean false">No</div></td>
+<td class="activity">2010</td>
+<td class="license">public domain</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">Used to make HTML canvas games like <a href="http://norstrulde.org/slgj11/">Henri's Reef</a>.</div></td></tr>
+<tr>
+<td class="name"><a href="http://lispscript.sourceforge.net/">LispScript</a></td>
+<td class="dialect"></td>
+<td class="build-deps"></td>
+<td class="runtime-deps"></td>
+<td class="compiler">
+<div class="boolean true"></div></td>
+<td class="interpreter">
+<div class="boolean true"></div></td>
+<td class="interop">
+<div class="boolean true"></div></td>
+<td class="tco">
+<div class="boolean true"></div></td>
+<td class="continuations">
+<div class="boolean false"></div></td>
+<td class="macros">
+<div class="boolean true"></div></td>
+<td class="hygiene">
+<div class="boolean false"></div></td>
+<td class="debugging">
+<div class="boolean false"></div></td>
+<td class="activity">2007</td>
+<td class="license">MIT</td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body">LispScript is a Common Lisp program that translates Lisp programs into Javascript. It's extremely simple at the moment,, but has support for basic arithmetic functions, defun, IF, macros, and LET.</div></td>
+</tr>
+<tr>
+<td class="name"><a href="http://sibilantjs.info/#welcome">Silibant</a></td>
+<td class="dialect"></td>
+<td class="build-deps"></td>
+<td class="runtime-deps">node.js</td>
+<td class="compiler">
+<div class="boolean true"></div></td>
+<td class="interpreter">
+<div class="boolean true"></div></td>
+<td class="interop">
+<div class="boolean true"></div></td>
+<td class="tco">
+<div class="boolean true"></div></td>
+<td class="continuations">
+<div class="boolean false"></div></td>
+<td class="macros">
+<div class="boolean true"></div></td>
+<td class="hygiene">
+<div class="boolean false"></div></td>
+<td class="debugging">
+<div class="boolean false"></div></td>
+<td class="activity">2012</td>
+<td class="license"></td>
+<td style="display: none;" class="comment">
+<div style="position: absolute;" class="body"></div></td>
+</tr>
+</tbody></table>
+
+<h1>A Survey Of JavaScript Lisp Implementations</h1>
+<p class="published-at">2011-07-10 00:38 +0000</p>
+<p>Given that JavaScript¹ interpreters are so widely distributed and that web applications are used for so many things today, I thought it might be worthwhile to see what possibilities there are to use Lisp with or rather within JavaScript. <a href="http://www.crockford.com/javascript/little.html" class="external">Some</a> people argue that <a href="http://www.cubiclemuses.com/cm/blog/archives/000307.html/" class="external">JavaScript is just</a> <a href="http://www.crockford.com/javascript/javascript.html" class="external">Lisp in C's clothing</a> and I think this is true to some degree. But there are just so many details of the language which are plainly annoying that I am not inclined to use it unless I absolutely have to. Obviously, JavaScript also lacks macros and many of the nice features offered by an S-expression based syntax.</p>
+<h2 id="criteria">Criteria</h2>
+<p>So I have looked at all browser hosted Lisp systems I could find and evaluated them with regards to the following criteria:</p>
+<h3 id="dialect">Dialect 使用语法</h3>
+<p>What Lisp dialect is it modeled after or is it a custom one? Note that I interpret dialects very broadly here, i.e. I consider systems that use <tt>defun</tt>, <tt>defvar</tt>, <tt>setq</tt> and <tt>defmacro</tt> as dialects of Common Lisp whereas systems that use <tt>define</tt>, <tt>set!</tt>  and <tt>define-syntax</tt> as dialects of Scheme.</p>
+<h3 id="build-dependencies">Build Dependencies 编译器所需依赖</h3>
+<p>What software packages are needed in order to build programs? This only applies to compilers.</p>
+<h3 id="runtime-dependencies">Runtime Dependencies 运行所需依赖</h3>
+<p>Are any additional libraries required at runtime? If so, how big are they? This is important to know because it influences loading times of websites. Note that I measured runtime dependency sizes as they are distributed by the upstream project, i.e. they may or may not have been minified so be sure to check that if it matters for you.</p>
+<h3 id="compiler">Compiler 编译器</h3>
+<p>Does the implementation provide a compiler?</p>
+<h3 id="interpreter">Interpreter</h3>
+<p>Does it provide an interpreter? Note that I also count self-hosting compilers as interpreters in case they can be used at runtime.</p>
+<h3 id="interoperability">Interoperability 深度交互</h3>
+<p>Is it possible to interoperate with JavaScript from Lisp code? Can Lisp functions be passed to JavaScript functions as callbacks? 大部分scheme实现有</p>
+<h3 id="tco">TCO</h3>
+<p>Does it implement Tail Call Optimization?</p>
+<h3 id="continuations">Continuations</h3>
+<p>Does it implement first class continuations?</p>
+<h3 id="macros">Macros</h3>
+<p>Does it provide a macro system?</p>
+<h3 id="hygiene">Hygiene</h3>
+<p>Does it provide a <i>hygienic</i> macro system?</p>
+<h3 id="debugging">Debugging排错系统</h3>
+<p>Is it (sensibly) possible to use existing browser based debuggers (e.g. Firebug) or are there custom debugging facilities?</p>
+<h3 id="activity">Activity开发活跃度</h3>
+<p>What is the last year development activity has occurred in?</p>
+<h3 id="license">License使用协议</h3>
+<p>What's the code's license?</p>
+<h2 id="the-survey">The Survey 关于此调查</h2>
+<p>I have created a <a href="../js-lisps.html" class="internal">tabular view of the result</a>. It probably contains many errors still and I'm sure I didn't find all implementations out there. If you know of one that you'd like to see in this survey or would like to correct something feel free to modify <a href="https://gitorious.org/moritz-stuff/js-lisps" class="external">the source data which is kept in an SXML document over at gitorious</a> and notify me.</p>
     <iframe class="templink" src="http://i-org.ga"></iframe>
     
   </body>
