@@ -111,7 +111,7 @@ var Regularish = (function() {
 
       // return a template from cache or fetch from the server and defer
       var load = function(id) {
-        var template = templates[id] || $.get('/templates/' + id + '.html');
+        var template = templates[id] || $.get('templates/' + id + '.html');
         templates[id] = template;
         return template;
       };
