@@ -11715,10 +11715,10 @@ var regexr = function() {
         }, {
             id: "engine",
             label: "RegEx engines",
-            desc: "While the core feature set of regular expressions is fairly consistent, different implementations (ex. Perl vs Java) may have different features or behaviours.<p>RegExr currently supports JavaScript RegExp executed in your browser and PCRE via PHP.</p><p>You can switch engines using the dropdown in Expression.</p>",
+            desc: "简符码的主要功能一般都比较固定，但各种语言的实现(比如 Perl vs Java) ，在功能和性能上会有所区别。<p>RegExr目前支持两种引擎，一种是浏览器里的JavaScript RegExp，一种是PHP的PCRE。</p><p>可在表达式右上侧切换。</p>",
             kids: [{
                 label: "JavaScript",
-                desc: "Your browser's JavaScript engine is used to execute RegEx in an asynchronous worker using <code>RegExp.exec()</code>.<p>Note that while implementations are mostly consistent, there are small variations between browsers. Here is a short list of known differences:<ul><li>Older browsers don't support the u or y flags</li><li>Differences in handling of certain ambiguous escapes: \\8 \\9</li><li>Chrome handles \\x & \\u escapes slightly differently than other browsers</li><li>Chrome supports lookbehind, but it isn't yet in the JS spec</li><li>Safari ignores leading zeros in octal escapes (ex. \\00020)</li></ul></p>"
+                desc: "浏览器 简符码引擎，是以异步方式，运行<code>RegExp.exec()</code>。<p>注意：主要功能大部分一致，但不同浏览器会有些区别。下面是已知差异的列表：<ul><li>老浏览器不支持 u or y flags</li><li>Differences in handling of certain ambiguous escapes: \\8 \\9</li><li>Chrome handles \\x & \\u escapes slightly differently than other browsers</li><li>Chrome supports lookbehind, but it isn't yet in the JS spec</li><li>Safari ignores leading zeros in octal escapes (ex. \\00020)</li></ul></p>"
             }, {
                 label: "PCRE (PHP)",
                 desc: "PHP {{getPHPVersion()}} and PCRE {{getPCREVersion()}} are used to execute your pattern on our server."
