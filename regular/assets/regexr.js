@@ -11204,7 +11204,7 @@ var regexr = function() {
                   , n = oe.expression.value;
                 if (this._divs = [],
                 t && "close" !== t.next.type) {
-                    for (e.innerHTML = "<span class='desc'>Roll-over elements below to highlight in the Expression above. 点击查看手册.</span>"; (t = t.next) && "close" !== t.type; )
+                    for (e.innerHTML = "<span class='desc'>翻动下面元素会高亮上方表达式输入框里对应的表达式，点击可查看手册。</span>"; (t = t.next) && "close" !== t.type; )
                         if (!(t.proxy || t.open && t.open.proxy)) {
                             var r = C.GROUP_CLASS_BY_TYPE
                               , i = C.CSS_PREFIX
@@ -11319,7 +11319,7 @@ var regexr = function() {
             key: "_update",
             value: function() {
                 h.empty(this.el),
-                h.create("div", "desc", "Click a <span class='match'>match</span> above to display match &amp; group details. Mouse over a <code>Group</code> row to highlight it in the Expression.", this.el),
+                h.create("div", "desc", "点击上面的 <span class='match'>匹配项</span>，查看 匹配和组详情， 鼠标移到 <code>Group</code>行上，可高亮 对应的表达式。", this.el),
                 this._addMatch(oe.text.selectedMatch, oe.text.value)
             }
         }, {
@@ -13183,20 +13183,20 @@ var regexr = function() {
             token: "\\X"
         }, {
             id: "word",
-            desc: "Matches any word character (alphanumeric & underscore).",
+            desc: "匹配任意词字符，包括字母大小写，数字，汉字或下划线。",
             ext: " Only matches low-ascii characters (no accented or non-roman characters). Equivalent to <code>[A-Za-z0-9_]</code>",
             example: ["\\w", "bonjour, mon frÃ¨re"],
             token: "\\w"
         }, {
             id: "notword",
             label: "not word",
-            desc: "Matches any character that is not a word character (alphanumeric & underscore).",
+            desc: "匹配任意非字母字符(alphanumeric & underscore).",
             ext: " Equivalent to <code>[^A-Za-z0-9_]</code>",
             example: ["\\W", "bonjour, mon frÃ¨re"],
             token: "\\W"
         }, {
             id: "digit",
-            desc: "Matches any digit character (0-9).",
+            desc: "匹配任意数字字符 (0-9).",
             ext: " Equivalent to <code>[0-9]</code>.",
             example: ["\\d", "+1-(444)-555-1234"],
             token: "\\d"
@@ -13285,7 +13285,7 @@ var regexr = function() {
         kids: [{
             id: "bos",
             label: "beginning of string",
-            desc: "Matches the beginning of the string.",
+            desc: "匹配字串开头.",
             ext: " Unlike <code>^</code>, this is unaffected by the multiline flag (<code>m</code>). This matches a position, not a character.",
             token: "\\A"
         }, {
@@ -13303,14 +13303,14 @@ var regexr = function() {
         }, {
             id: "bof",
             label: "beginning",
-            desc: "Matches the beginning of the string, or the beginning of a line if the multiline flag (<code>m</code>) is enabled.",
+            desc: "匹配字串开头，或者 当多行标识 (<code>m</code>) 启用时，匹配行首.",
             ext: " This matches a position, not a character.",
             example: ["^\\w+", "she sells seashells"],
             token: "^"
         }, {
             id: "eof",
             label: "end",
-            desc: "Matches the end of the string, or the end of a line if the multiline flag (<code>m</code>) is enabled.",
+            desc: "匹配字串末尾，若多行标识 (<code>m</code>) 打上，则表示匹配行末。",
             ext: " This matches a position, not a character.",
             example: ["\\w+$", "she sells seashells"],
             token: "$"
@@ -13397,7 +13397,7 @@ var regexr = function() {
         kids: [{
             id: "group",
             label: "capturing group",
-            desc: "Groups multiple tokens together and creates a capture group for extracting a substring or using a backreference.",
+            desc: "多个表达式组合起来，and creates a capture group for extracting a substring or using a backreference.",
             example: ["(ha)+", "hahaha haa hah!"],
             token: "(ABC)"
         }, {
@@ -13430,7 +13430,7 @@ var regexr = function() {
         }, {
             id: "noncapgroup",
             label: "non-capturing group",
-            desc: "Groups multiple tokens together without creating a capture group.",
+            desc: "多个表达式组合起来，但不捕获，用于抵消捕获组的副作用。",
             example: ["(?:ha)+", "hahaha haa hah!"],
             token: "(?:ABC)"
         }, {
@@ -13498,19 +13498,19 @@ var regexr = function() {
         desc: "Quantifiers indicate that the preceding token must be matched a certain number of times. By default, quantifiers are greedy, and will match as many characters as possible.<hr/>Alternation acts like a boolean OR, matching one sequence or another.",
         kids: [{
             id: "plus",
-            desc: "Matches 1 or more of the preceding token.",
+            desc: "表示匹配 之前标识 1次或1次以上。",
             example: ["b\\w+", "b be bee beer beers"],
             token: "+"
         }, {
             id: "star",
-            desc: "Matches 0 or more of the preceding token.",
+            desc: "表示匹配 之前标识 0次或0次以上。",
             example: ["b\\w*", "b be bee beer beers"],
             token: "*"
         }, {
             id: "quant",
             label: "quantifier",
             tip: "Match {{getQuant()}} of the preceding token.",
-            desc: "Matches the specified quantity of the previous token. <code>{1,3}</code> will match 1 to 3. <code>{3}</code> will match exactly 3. <code>{3,}</code> will match 3 or more. ",
+            desc: "表示匹配 前面标识 的次数，<code>{1,3}</code>表示1到3次，<code>{3}</code>表示3次， <code>{3,}</code>表示3次或3次以上。",
             example: ["b\\w{2,3}", "b be bee beer beers"],
             token: "{1,3}"
         }, {
@@ -13534,7 +13534,7 @@ var regexr = function() {
         }, {
             id: "alt",
             label: "alternation",
-            desc: "Acts like a boolean OR. Matches the expression before or after the <code>|</code>.",
+            desc: "表示 或 ，表示只要匹配<code>|</code>符号前后条件皆可。",
             ext: "<p>It can operate within a group, or on a whole expression. The patterns will be tested in order.</p>",
             example: ["b(a|e|i)d", "bad bud bod bed bid"],
             token: "|"
