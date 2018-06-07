@@ -13147,14 +13147,14 @@ var regexr = function() {
         }, {
             id: "setnot",
             label: "negated set",
-            desc: "Match any character that is not in the set.",
+            desc: "匹配 非模式里的任意字符。",
             example: ["[^aeiou]", "glib jocks vex dwarves!"],
             token: "[^ABC]"
         }, {
             id: "range",
-            tip: "Matches a character in the range {{getChar(prev)}} to {{getChar(next)}} (char code {{prev.code}} to {{next.code}}). {{getInsensitive()}}",
+            tip: "按字母顺序表，匹配范围内字母。从 {{getChar(prev)}} 到 {{getChar(next)}} (char code {{prev.code}} 到 {{next.code}})。 {{getInsensitive()}}",
             example: ["[g-s]", "abcdefghijklmnopqrstuvwxyz"],
-            desc: "Matches a character having a character code between the two specified characters inclusive.",
+            desc: "按字母顺序表，匹配范围内的字母。",
             token: "[A-Z]"
         }, {
             id: "posixcharclass",
@@ -13509,26 +13509,26 @@ var regexr = function() {
         }, {
             id: "quant",
             label: "quantifier",
-            tip: "Match {{getQuant()}} of the preceding token.",
-            desc: "表示匹配 前面标识 的次数，<code>{1,3}</code>表示1到3次，<code>{3}</code>表示3次， <code>{3,}</code>表示3次或3次以上。",
+            tip: "匹配前面标识 出现 {{getQuant()}} 次数。",
+            desc: "表示匹配 前面标识 的出现次数，<code>{1,3}</code>表示1到3次，<code>{3}</code>表示3次， <code>{3,}</code>表示3次或3次以上。",
             example: ["b\\w{2,3}", "b be bee beer beers"],
             token: "{1,3}"
         }, {
             id: "opt",
             label: "optional",
-            desc: "Matches 0 or 1 of the preceding token, effectively making it optional.",
+            desc: "匹配前面标识 出现 0或1次, effectively making it optional.",
             example: ["colou?r", "color colour"],
             token: "?"
         }, {
             id: "lazy",
             tip: "Makes the preceding quantifier {{getLazy()}}, causing it to match as {{getLazyFew()}} characters as possible.",
-            desc: "Makes the preceding quantifier lazy, causing it to match as few characters as possible.",
+            desc: "消极：尽可能少匹配字符。",
             ext: " By default, quantifiers are greedy, and will match as many characters as possible.",
             example: ["b\\w+?", "b be bee beer beers"],
             token: "?"
         }, {
             id: "possessive",
-            desc: "Makes the preceding quantifier possessive. It will match as many characters as possible, and will not release them to match subsequent tokens.",
+            desc: "积极：尽可能多匹配字符, and will not release them to match subsequent tokens.",
             ext: "<p>For example <code>/.*a/</code> would match <code>aaa</code>, but <code>/.*+a/</code> would not, because the repeating dot would match and not release the last character to match <code>a</code>.</p>",
             token: "+"
         }, {
