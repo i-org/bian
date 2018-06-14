@@ -12987,7 +12987,7 @@ var regexr = function() {
             value: function(e, t) {
                 if (!e)
                     return null;
-                for (var n = e.l > 150, r = "<b>match: </b>" + f.shorten(t.substr(e.i, e.l), 150, !0, "i") + "<br/><b>range: </b><code>" + e.i + "-" + (e.i + e.l - 1) + "</code>", i = e.groups, o = i && i.length, s = 0; s < o; s++) {
+                for (var n = e.l > 150, r = "<b>匹配: </b>" + f.shorten(t.substr(e.i, e.l), 150, !0, "i") + "<br/><b>范围: </b><code>" + e.i + "-" + (e.i + e.l - 1) + "</code>", i = e.groups, o = i && i.length, s = 0; s < o; s++) {
                     if (s > 3 && o > 5) {
                         n = !1,
                         r += "<br><span class='more'>see Details for " + (o - s) + " more</span>";
@@ -13466,13 +13466,13 @@ var regexr = function() {
         kids: [{
             id: "poslookahead",
             label: "positive lookahead",
-            desc: "Matches a group after the main expression without including it in the result.",
+            desc: "对前面表达式的修正，只匹配 符合后面的表达式的。Matches a group after the main expression without including it in the result.",
             example: ["\\d(?=px)", "1pt 2px 3em 4px"],
             token: "(?=ABC)"
         }, {
             id: "neglookahead",
             label: "negative lookahead",
-            desc: "Specifies a group that can not match after the main expression (if it matches, the result is discarded).",
+            desc: "对前面表达式的修正，只匹配不符合 后面表达式的。Specifies a group that can not match after the main expression (if it matches, the result is discarded).",
             example: ["\\d(?!px)", "1pt 2px 3em 4px"],
             token: "(?!ABC)"
         }, {
@@ -13522,13 +13522,13 @@ var regexr = function() {
         }, {
             id: "lazy",
             tip: "Makes the preceding quantifier {{getLazy()}}, causing it to match as {{getLazyFew()}} characters as possible.",
-            desc: "消极：尽可能少匹配字符。",
+            desc: "负面：从前面选择中，排除掉后面表达式部分。",
             ext: " By default, quantifiers are greedy, and will match as many characters as possible.",
             example: ["b\\w+?", "b be bee beer beers"],
             token: "?"
         }, {
             id: "possessive",
-            desc: "积极：尽可能多匹配字符, and will not release them to match subsequent tokens.",
+            desc: "正面：从前面选择中，筛选出匹配后面表达式的部分, and will not release them to match subsequent tokens.",
             ext: "<p>For example <code>/.*a/</code> would match <code>aaa</code>, but <code>/.*+a/</code> would not, because the repeating dot would match and not release the last character to match <code>a</code>.</p>",
             token: "+"
         }, {
