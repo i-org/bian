@@ -10814,10 +10814,10 @@ var regexr = function() {
     N.DEFAULT_EXPRESSION = "/([A-Z])\\w+/g",
     N.FLAGS = "gimsuxyU",
     N.FLAG_LABELS = {
-        g: "<em>g</em>lobal",
-        i: "case <em>i</em>nsensitive",
-        m: "<em>m</em>ultiline",
-        s: "<em>s</em>ingle line (dotall)",
+        g: "<em>g</em>lobal全文查找",
+        i: "case <em>i</em>nsensitive大小写敏感",
+        m: "<em>m</em>ultiline匹配多行",
+        s: "<em>s</em>ingle line (dotall)单行",
         u: "<em>u</em>nicode",
         x: "e<em>x</em>tended",
         y: "stick<em>y</em>",
@@ -13304,27 +13304,27 @@ var regexr = function() {
             id: "bof",
             label: "beginning",
             desc: "匹配字串开头，或者 当多行标识 (<code>m</code>) 启用时，匹配行首.",
-            ext: " This matches a position, not a character.",
+            ext: " 此匹配的是一个位置，不是字符。",
             example: ["^\\w+", "she sells seashells"],
             token: "^"
         }, {
             id: "eof",
             label: "end",
             desc: "匹配字串末尾，若多行标识 (<code>m</code>) 打上，则表示匹配行末。",
-            ext: " This matches a position, not a character.",
+            ext: " 此匹配的是一个位置，不是字符。",
             example: ["\\w+$", "she sells seashells"],
             token: "$"
         }, {
             id: "wordboundary",
             label: "word boundary",
-            desc: "Matches a word boundary position between a word character and non-word character or position (start / end of string).",
+            desc: "匹配一个单词的末尾或者末尾位置。(start / end of string).",
             ext: " See the word character class (<code>w</code>) for more info.",
             example: ["s\\b", "she sells seashells"],
             token: "\\b"
         }, {
             id: "notwordboundary",
             label: "not word boundary",
-            desc: "Matches any position that is not a word boundary.",
+            desc: "匹配非单词末尾的任意位置。",
             ext: " This matches a position, not a character.",
             example: ["s\\B", "she sells seashells"],
             token: "\\B"
